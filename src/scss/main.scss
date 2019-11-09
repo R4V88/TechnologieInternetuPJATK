@@ -2,56 +2,85 @@
 @import "_variables";
 @import "_mixins";
 
-
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
-  width: 1000px;
-  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  background-image: url("https://images4.alphacoders.com/595/595121.jpg");
-  background-repeat: no-repeat, repeat;
-  background: fixed;
+  flex-direction: column;
+  align-items: center;
 }
+
+.background {
+  background-image: url(/assets/img/grass.jpg);
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .content {
-  display: flex;
-  max-width: 100%;
+  max-width: 1000px;
   width: 100%;
-  justify-content: center;
-  background: lightblue;
+  margin: 0, auto;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-column-gap: 10px;
 }
 
 .navigation {
-  max-width: 150px;
-  width: 100%;
-  margin-right:25px;
+  background-color: rgba(38, 166, 91, 0.3);
+  &__list {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    background: #399e5a;
+  }
+  &__innerList {
+    width: 100%;
+    list-style: none;
+    background: #63e2c6;
+  }
+
+  &__linkTop {
+    height: 75px;
+  }
+  &__link {
+    display: flex;
+    height: 25px;
+    padding: 5px;
+    align-items: center;
+  }
 }
+
+.link {
+  text-decoration: none;
+}
+
 .box {
-  height: 800px;
+  max-height: 700px;
   overflow: auto;
 }
 
-.main {
-  /* padding-left: 50px; */
+.image {
+  background-image: url(/assets/img/fox-vector.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 500px;
+}
+
+.footer{
+  max-width: 1000px;
   width: 100%;
-  height: 100%;
-}
-
-.topTitle {
-  font-size: 52px;
-}
-
-.list {
-  background: rgb(16, 149, 161);
-}
-
-.insideListItem {
-  background: lightskyblue
+  background: green;
+  width: 100%;
 }
