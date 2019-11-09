@@ -1,4 +1,4 @@
-# wtf-gulp-starter
+# To use Gulp:
 
 `npm install -g gulp-cli`
 
@@ -6,4 +6,3 @@
 
 `gulp`
 
-To publish your page using github pages use `npm run deploy`
