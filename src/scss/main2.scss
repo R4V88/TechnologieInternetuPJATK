@@ -1,0 +1,182 @@
+@import "_normalize";
+@import "_variables";
+@import "_mixins";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background {
+  background-image: url(/assets/img/grass.jpg);
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.content {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0, auto;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-column-gap: 10px;
+}
+
+.navigation {
+  background-color: rgba(38, 166, 91, 0.3);
+  &__list {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    background: #399e5a;
+  }
+  &__innerList {
+    width: 100%;
+    list-style: none;
+    background: #63e2c6;
+  }
+
+  &__linkTop {
+    height: 75px;
+  }
+  &__link {
+    display: flex;
+    height: 25px;
+    padding: 5px;
+    align-items: center;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+.box {
+  max-height: 600px;
+  overflow: auto;
+}
+
+.article {
+  width: 100%;
+  &__header {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+  &__title {
+    letter-spacing: 3px;
+  }
+  &__content {
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    font-family: 'Noto Serif', serif;
+  }
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  &__fox {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.midArticle {
+  width: 100%;
+  &__header {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+  &__title {
+    letter-spacing: 3px;
+  }
+  &__content {
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    font-family: 'Noto Serif', serif;
+  }
+}
+
+.someSection{
+  &__secondaryHeader{
+    font-size: 46px;
+  }
+  &__thirdParagraph{
+    font-size: 34px;
+    font-weight: bold;
+  }
+}
+
+.table {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 50px);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  padding-right: 10px;
+  padding-left: 2px;
+  &__header {
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    background-color: #08aeea;
+    background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
+  }
+  &__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+  }
+  &__row {
+    letter-spacing: 3px;
+    background-color: #f4d03f;
+    background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 150px;
+  max-width: 1000px;
+  width: 100%;
+  background: rgba(38, 166, 91, 0.3);
+  width: 100%;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  &__paragraph {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+}
