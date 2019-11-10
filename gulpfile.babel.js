@@ -78,6 +78,32 @@ gulp.task("sass", () => {
     .pipe(browserSync.stream());
 });
 
+gulp.task("sass", () => {
+  return gulp
+    .src("./src/scss/main2.scss")
+    .pipe(
+      plumber({
+        errorHandler: function(err) {
+          notify.onError({
+            title: `Gulp error in ${err.plugin}`,
+            message: err.toString()
+          })(err);
+        }
+      })
+    )
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .on("error", sass.logError)
+    .pipe(
+      postcss([
+        autoprefixer({ grid: true, browsers: ["> 5%", "last 4 versions"] })
+      ])
+    )
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("./dist/css"))
+    .pipe(browserSync.stream());
+});
+
 gulp.task(
   "serve",
   gulp.series("sass", "html", "js", "assets", "pwa", function() {
